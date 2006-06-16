@@ -1,0 +1,92 @@
+libdvdread
+------------------------------------------
+libdvdread provides a simple foundation for reading DVD-Video images.
+It offers DVD applications:
+
+1. A simple abstraction for reading the files on a DVD image
+   (dvd_reader.h).
+2. A simple library for parsing the information (IFO) files
+   (ifo_read.h/ifo_types.h).
+3. A simple library for parsing the navigation (NAV) packets
+   (nav_read.h/nav_types.h).
+
+Runtime requirements:
+  cygwin-1.5.19-4
+  libdvdcss2-1.2.9-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  cygwin-1.5.19-4
+  autoconf2.5-2.59-3
+  automake1.9-1.9.6-1
+  binutils-20050610-1
+  cygport-0.1.93-1
+  gawk-3.1.5-2
+  gcc-core-3.4.4-1
+  libtool1.5-1.5.22-1
+  make-3.80-1
+  sed-4.1.4-1
+
+Canonical website:
+  http://www.dtek.chalmers.se/groups/dvd/
+
+Canonical download:
+  http://www.dtek.chalmers.se/groups/dvd/dist/
+
+-------------------------------------------
+
+Build instructions:
+  unpack libdvdread-0.9.5-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./libdvdread-0.9.5-X.cygport all
+
+This will create:
+  /usr/src/libdvdread-0.9.5-X-src.tar.bz2
+  /usr/src/libdvdread-0.9.5-X.tar.bz2
+  /usr/src/libdvdread3-0.9.5-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the main package:
+
+  /usr/include/dvdread/cmd_print.h
+  /usr/include/dvdread/dvd_reader.h
+  /usr/include/dvdread/ifo_print.h
+  /usr/include/dvdread/ifo_read.h
+  /usr/include/dvdread/ifo_types.h
+  /usr/include/dvdread/nav_print.h
+  /usr/include/dvdread/nav_read.h
+  /usr/include/dvdread/nav_types.h
+  /usr/lib/libdvdread.a
+  /usr/lib/libdvdread.dll.a
+  /usr/lib/libdvdread.la
+  /usr/share/doc/Cygwin/libdvdread-0.9.6.README
+  /usr/share/doc/libdvdread-0.9.6/AUTHORS
+  /usr/share/doc/libdvdread-0.9.6/COPYING
+  /usr/share/doc/libdvdread-0.9.6/INSTALL
+  /usr/share/doc/libdvdread-0.9.6/NEWS
+  /usr/share/doc/libdvdread-0.9.6/README
+  /usr/share/doc/libdvdread-0.9.6/TODO
+
+Files included in the runtime package:
+
+  /usr/bin/cygdvdread-3.dll
+
+------------------
+
+Port Notes:
+
+----- version 0.9.6-1 -----
+Version bump.
+
+----- version 0.9.5-1 -----
+Version bump.
+
+----- version 0.9.4-1 -----
+Initial release for Cygwin.
+
+
+Cygwin port maintained by:
+http://cygwinports.dotsrc.org/
