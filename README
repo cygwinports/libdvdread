@@ -11,21 +11,21 @@ It offers DVD applications:
    (nav_read.h/nav_types.h).
 
 Runtime requirements:
-  cygwin-1.5.19-4
+  cygwin-1.5.21-2
   libdvdcss2-1.2.9-1
 
 Build requirements:
 (besides corresponding -devel packages)
-  cygwin-1.5.19-4
-  autoconf2.5-2.59-3
+  cygwin-1.5.21-2
+  autoconf2.5-2.59-2
   automake1.9-1.9.6-1
-  binutils-20050610-1
-  cygport-0.1.93-1
+  binutils-20060709-1
+  cygport-0.2.5-1
   gawk-3.1.5-2
   gcc-core-3.4.4-1
   libtool1.5-1.5.22-1
-  make-3.80-1
-  sed-4.1.4-1
+  make-3.81-1
+  sed-4.1.5-1
 
 Canonical website:
   http://www.dtek.chalmers.se/groups/dvd/
@@ -36,21 +36,35 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack libdvdread-0.9.5-X-src.tar.bz2
+  unpack libdvdread-0.9.7-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./libdvdread-0.9.5-X.cygport all
+  cygport ./libdvdread-0.9.7-X.cygport all
 
 This will create:
-  /usr/src/libdvdread-0.9.5-X-src.tar.bz2
-  /usr/src/libdvdread-0.9.5-X.tar.bz2
-  /usr/src/libdvdread3-0.9.5-X.tar.bz2
+  /usr/src/libdvdread-0.9.7-X-src.tar.bz2
+  /usr/src/libdvdread-0.9.7-X.tar.bz2
+  /usr/src/libdvdread-devel-0.9.7-X.tar.bz2
+  /usr/src/libdvdread3-0.9.7-X.tar.bz2
 
 -------------------------------------------
 
-Files included in the main package:
+Files included in the binary packages:
 
+(libdvdread)
+  /usr/share/doc/Cygwin/libdvdread-0.9.7.README
+  /usr/share/doc/libdvdread-0.9.7/AUTHORS
+  /usr/share/doc/libdvdread-0.9.7/COPYING
+  /usr/share/doc/libdvdread-0.9.7/INSTALL
+  /usr/share/doc/libdvdread-0.9.7/NEWS
+  /usr/share/doc/libdvdread-0.9.7/README
+  /usr/share/doc/libdvdread-0.9.7/TODO
+
+(libdvdread3)
+  /usr/bin/cygdvdread-3.dll
+
+(libdvdread-devel)
   /usr/include/dvdread/cmd_print.h
   /usr/include/dvdread/dvd_reader.h
   /usr/include/dvdread/ifo_print.h
@@ -62,21 +76,13 @@ Files included in the main package:
   /usr/lib/libdvdread.a
   /usr/lib/libdvdread.dll.a
   /usr/lib/libdvdread.la
-  /usr/share/doc/Cygwin/libdvdread-0.9.6.README
-  /usr/share/doc/libdvdread-0.9.6/AUTHORS
-  /usr/share/doc/libdvdread-0.9.6/COPYING
-  /usr/share/doc/libdvdread-0.9.6/INSTALL
-  /usr/share/doc/libdvdread-0.9.6/NEWS
-  /usr/share/doc/libdvdread-0.9.6/README
-  /usr/share/doc/libdvdread-0.9.6/TODO
-
-Files included in the runtime package:
-
-  /usr/bin/cygdvdread-3.dll
 
 ------------------
 
 Port Notes:
+
+----- version 0.9.7-1 -----
+Version bump.
 
 ----- version 0.9.6-1 -----
 Version bump.
