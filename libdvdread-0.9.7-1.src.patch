@@ -1,4 +1,3 @@
-diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x ltmain.sh -x 'config.*' -x depcomp -x install-sh -x missing -x mkinstalldirs -x autom4te.cache -x '*compile' -x Makefile.in.in -x 'intltool*.in' -x 'xml-i18n-*.in' -x '*.pyc' -x '*.mo' -x '*.gmo' -x ABOUT-NLS -x Makevars.template -x COPYING -x INSTALL -x '*.orig' -x '*.rej' -x '*~' -x '*.temp' -x texinfo.tex -x ylwrap -x Makefile.in -x makefile.in -x configure -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x omf.make -x xmldocs.make origsrc/libdvdread-0.9.7/configure.in src/libdvdread-0.9.7/configure.in
 --- origsrc/libdvdread-0.9.7/configure.in	2006-10-06 03:12:31.000000000 -0500
 +++ src/libdvdread-0.9.7/configure.in	2006-10-09 14:19:35.547250000 -0500
 @@ -103,15 +103,15 @@
@@ -20,7 +19,6 @@ diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x ltmain.sh -x 'config.*' -x depco
      AC_MSG_RESULT([yes])
    else
      dnl -w added to shutup GCC3.1's cpp warning about -I/usr/local
-diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x ltmain.sh -x 'config.*' -x depcomp -x install-sh -x missing -x mkinstalldirs -x autom4te.cache -x '*compile' -x Makefile.in.in -x 'intltool*.in' -x 'xml-i18n-*.in' -x '*.pyc' -x '*.mo' -x '*.gmo' -x ABOUT-NLS -x Makevars.template -x COPYING -x INSTALL -x '*.orig' -x '*.rej' -x '*~' -x '*.temp' -x texinfo.tex -x ylwrap -x Makefile.in -x makefile.in -x configure -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x omf.make -x xmldocs.make origsrc/libdvdread-0.9.7/dvdread/Makefile.am src/libdvdread-0.9.7/dvdread/Makefile.am
 --- origsrc/libdvdread-0.9.7/dvdread/Makefile.am	2006-10-06 03:12:31.000000000 -0500
 +++ src/libdvdread-0.9.7/dvdread/Makefile.am	2006-10-09 14:19:14.328500000 -0500
 @@ -6,7 +6,7 @@
@@ -32,7 +30,6 @@ diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x ltmain.sh -x 'config.*' -x depco
  
  pkgincludedir = $(includedir)/dvdread
  
-diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x ltmain.sh -x 'config.*' -x depcomp -x install-sh -x missing -x mkinstalldirs -x autom4te.cache -x '*compile' -x Makefile.in.in -x 'intltool*.in' -x 'xml-i18n-*.in' -x '*.pyc' -x '*.mo' -x '*.gmo' -x ABOUT-NLS -x Makevars.template -x COPYING -x INSTALL -x '*.orig' -x '*.rej' -x '*~' -x '*.temp' -x texinfo.tex -x ylwrap -x Makefile.in -x makefile.in -x configure -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x omf.make -x xmldocs.make origsrc/libdvdread-0.9.7/dvdread/bswap.h src/libdvdread-0.9.7/dvdread/bswap.h
 --- origsrc/libdvdread-0.9.7/dvdread/bswap.h	2006-06-06 15:03:37.000000000 -0500
 +++ src/libdvdread-0.9.7/dvdread/bswap.h	2006-10-09 14:19:35.578500000 -0500
 @@ -34,7 +34,7 @@
@@ -44,7 +41,6 @@ diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x ltmain.sh -x 'config.*' -x depco
  #include <byteswap.h>
  #define B2N_16(x) x = bswap_16(x)
  #define B2N_32(x) x = bswap_32(x)
-diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x ltmain.sh -x 'config.*' -x depcomp -x install-sh -x missing -x mkinstalldirs -x autom4te.cache -x '*compile' -x Makefile.in.in -x 'intltool*.in' -x 'xml-i18n-*.in' -x '*.pyc' -x '*.mo' -x '*.gmo' -x ABOUT-NLS -x Makevars.template -x COPYING -x INSTALL -x '*.orig' -x '*.rej' -x '*~' -x '*.temp' -x texinfo.tex -x ylwrap -x Makefile.in -x makefile.in -x configure -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x omf.make -x xmldocs.make origsrc/libdvdread-0.9.7/dvdread/dvd_reader.c src/libdvdread-0.9.7/dvdread/dvd_reader.c
 --- origsrc/libdvdread-0.9.7/dvdread/dvd_reader.c	2006-10-06 02:58:03.000000000 -0500
 +++ src/libdvdread-0.9.7/dvdread/dvd_reader.c	2006-10-09 14:19:35.609750000 -0500
 @@ -41,7 +41,7 @@
