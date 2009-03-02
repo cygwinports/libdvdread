@@ -1,6 +1,5 @@
 category: Video
-requires: cygwin libdvdcss
-sdesc: "DVD Video reading library (development)"
+sdesc: "DVD Video reading library (sources)"
 ldesc: "libdvdread provides a simple foundation for reading DVD-Video images.
 It offers DVD applications:
 

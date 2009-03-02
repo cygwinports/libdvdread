@@ -1,0 +1,40 @@
+--- origsrc/libdvdread-4.1.3/src/bswap.h	2008-09-06 16:55:51.000000000 -0500
++++ src/libdvdread-4.1.3/src/bswap.h	2009-03-02 17:00:22.421875000 -0600
+@@ -35,7 +35,7 @@
+ #include <sys/param.h>
+ #endif
+ 
+-#if defined(__linux__) || defined(__GLIBC__)
++#if defined(__linux__) || defined(__GLIBC__) || defined(__CYGWIN__)
+ #include <byteswap.h>
+ #define B2N_16(x) x = bswap_16(x)
+ #define B2N_32(x) x = bswap_32(x)
+--- origsrc/libdvdread-4.1.3/src/dvd_reader.c	2008-09-06 16:55:51.000000000 -0500
++++ src/libdvdread-4.1.3/src/dvd_reader.c	2009-03-02 17:01:16.828125000 -0600
+@@ -59,7 +59,7 @@ static inline int _private_gettimeofday(
+ #include <sys/mnttab.h>
+ #elif defined(SYS_BSD)
+ #include <fstab.h>
+-#elif defined(__linux__)
++#elif defined(__linux__) || defined(__CYGWIN__)
+ #include <mntent.h>
+ #endif
+ 
+@@ -402,7 +402,7 @@ dvd_reader_t *DVDOpen( const char *ppath
+ 	char *path_copy;
+ #if defined(SYS_BSD)
+ 	struct fstab* fe;
+-#elif defined(__sun) || defined(__linux__)
++#elif defined(__sun) || defined(__linux__) || defined(__CYGWIN__)
+ 	FILE *mntfile;
+ #endif
+ 
+@@ -487,7 +487,7 @@ dvd_reader_t *DVDOpen( const char *ppath
+ 	    }
+ 	    fclose( mntfile );
+ 	}
+-#elif defined(__linux__)
++#elif defined(__linux__) || defined(__CYGWIN__)
+         mntfile = fopen( MOUNTED, "r" );
+         if( mntfile ) {
+             struct mntent *me;
