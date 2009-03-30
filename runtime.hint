@@ -1,5 +1,5 @@
 category: Video
-requires: cygwin
+requires: cygwin libdvdcss2 libgcc1
 external-source: libdvdread
 sdesc: "DVD Video reading library (runtime)"
 ldesc: "libdvdread provides a simple foundation for reading DVD-Video images.
