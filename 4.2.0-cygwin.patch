@@ -1,0 +1,60 @@
+--- origsrc/libdvdread-4.2.0/src/bswap.h	2008-10-09 17:04:24.000000000 -0500
++++ src/libdvdread-4.2.0/src/bswap.h	2011-10-27 23:28:34.864366400 -0500
+@@ -37,7 +37,7 @@
+ #include <sys/param.h>
+ #endif
+ 
+-#if defined(__linux__) || defined(__GLIBC__)
++#if defined(__linux__) || defined(__GLIBC__) || defined(__CYGWIN__)
+ #include <byteswap.h>
+ #define B2N_16(x) x = bswap_16(x)
+ #define B2N_32(x) x = bswap_32(x)
+--- origsrc/libdvdread-4.2.0/src/dvd_input.c	2009-06-08 17:02:37.000000000 -0500
++++ src/libdvdread-4.2.0/src/dvd_input.c	2011-10-27 23:29:49.854666900 -0500
+@@ -165,7 +165,7 @@ static dvd_input_t file_open(const char
+   }
+ 
+   /* Open the device */
+-#if !defined(WIN32) && !defined(__OS2__)
++#ifndef O_BINARY
+   dev->fd = open(target, O_RDONLY);
+ #else
+   dev->fd = open(target, O_RDONLY | O_BINARY);
+@@ -285,6 +285,8 @@ int dvdinput_setup(void)
+ 
+ #ifdef __APPLE__
+   #define CSS_LIB "libdvdcss.2.dylib"
++#elif defined(__CYGWIN__)
++  #define CSS_LIB "cygdvdcss-2.dll"
+ #elif defined(WIN32)
+   #define CSS_LIB "libdvdcss.dll"
+ #elif defined(__OS2__)
+--- origsrc/libdvdread-4.2.0/src/dvd_reader.c	2011-06-15 13:09:15.000000000 -0500
++++ src/libdvdread-4.2.0/src/dvd_reader.c	2011-10-27 23:28:52.540428500 -0500
+@@ -60,7 +60,7 @@ static inline int _private_gettimeofday(
+ #include <sys/mnttab.h>
+ #elif defined(SYS_BSD)
+ #include <fstab.h>
+-#elif defined(__linux__)
++#elif defined(__linux__) || defined(__CYGWIN__)
+ #include <mntent.h>
+ #include <paths.h>
+ #endif
+@@ -408,7 +408,7 @@ dvd_reader_t *DVDOpen( const char *ppath
+     dvd_reader_t *auth_drive = 0;
+ #if defined(SYS_BSD)
+     struct fstab* fe;
+-#elif defined(__sun) || defined(__linux__)
++#elif defined(__sun) || defined(__linux__) || defined(__CYGWIN__)
+     FILE *mntfile;
+ #endif
+ 
+@@ -504,7 +504,7 @@ dvd_reader_t *DVDOpen( const char *ppath
+       }
+       fclose( mntfile );
+     }
+-#elif defined(__linux__)
++#elif defined(__linux__) || defined(__CYGWIN__)
+     mntfile = fopen( _PATH_MOUNTED, "r" );
+     if( mntfile ) {
+       struct mntent *me;

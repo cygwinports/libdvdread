@@ -1,9 +1,8 @@
 DESCRIPTION="DVD Video reading library"
-HOMEPAGE="http://www.mplayerhq.hu/"
-SRC_URI="http://www3.mplayerhq.hu/MPlayer/releases/dvdnav/${P}.tar.bz2"
+HOMEPAGE="http://dvdnav.mplayerhq.hu/"
+SRC_URI="http://dvdnav.mplayerhq.hu/releases//${P}.tar.bz2"
 
-PATCH_URI="4.1.3-cygwin.patch
-           4.1.3-dvdcss.patch
+PATCH_URI="4.2.0-cygwin.patch
            4.1.3-libtool22.patch"
 
 PKG_NAMES="${PN} ${PN}4 ${PN}-devel"
