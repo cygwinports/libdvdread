@@ -1,5 +1,5 @@
 NAME="libdvdread"
-VERSION=5.0.3
+VERSION=6.0.0
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="DVD Video reading library (sources)"
@@ -9,7 +9,10 @@ files on a DVD image, parsing the information (IFO) files, and parsing the
 navigation (NAV) packets."
 HOMEPAGE="http://dvdnav.mplayerhq.hu/"
 SRC_URI="http://download.videolan.org/pub/videolan/libdvdread/${VERSION}/libdvdread-${VERSION}.tar.bz2"
-PATCH_URI="5.0.3-cygwin.patch"
+PATCH_URI="
+	6.0.0-no-undefined.patch
+	5.0.3-cygwin.patch
+"
 
 PKG_NAMES="${NAME}4 ${NAME}-devel"
 libdvdread4_CONTENTS="usr/bin/cygdvdread-4.dll usr/share/doc/"
